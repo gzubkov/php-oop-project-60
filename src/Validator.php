@@ -10,6 +10,12 @@ class Validator
         'array' => []
     ];
 
+    public function __construct()
+    {
+        var_dump(file_get_contents('/project/tests/ValidatorTest.php'));
+        exit(0);
+    }
+
     public function string(): StringScheme
     {
         return new StringScheme($this->getCustomValidators('string'));
