@@ -71,7 +71,6 @@ class ArrayValidatorTest extends TestCase
         $this->assertFalse($schema->isValid(['age' => 10])); // missing required name
     }
 
-    /*
     public function testShapeWithNullable(): void
     {
         $schema = $this->validator->array()->shape([
@@ -84,5 +83,4 @@ class ArrayValidatorTest extends TestCase
         $this->assertTrue($schema->isValid(['profile' => null]));
         $this->assertFalse($schema->isValid(['profile' => ['name' => '']]));
     }
-        */
 }

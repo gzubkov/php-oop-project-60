@@ -2,19 +2,13 @@
 
 namespace Hexlet\Validator;
 
-class NumberScheme
+class NumberScheme extends CommonScheme
 {
     private $rules = [
         'required' => false,
         'positive' => false,
         'range' => false
     ];
-
-    public function required(): static
-    {
-        $this->rules['required'] = true;
-        return $this;
-    }
 
     public function positive(): static
     {
@@ -54,6 +48,6 @@ class NumberScheme
             }
         }
 
-        return true;
+        return $this->checkCustomValidators($integer);
     }
 }

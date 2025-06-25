@@ -2,19 +2,13 @@
 
 namespace Hexlet\Validator;
 
-class StringScheme
+class StringScheme extends CommonScheme
 {
     private $rules = [
         'required' => false,
         'contains' => false,
         'minlength' => false
     ];
-
-    public function required(): static
-    {
-        $this->rules['required'] = true;
-        return $this;
-    }
 
     public function minLength(int $length): static
     {
@@ -54,6 +48,6 @@ class StringScheme
             }
         }
 
-        return true;
+        return $this->checkCustomValidators($integer);
     }
 }

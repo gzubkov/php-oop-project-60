@@ -69,7 +69,7 @@ class NumberValidatorTest extends TestCase
         $this->assertTrue($schema->isValid(10));
         $this->assertFalse($schema->isValid(11));
     }
-/*
+
     public function testCustomNumberValidator(): void
     {
         $v = new Validator();
@@ -90,5 +90,5 @@ class NumberValidatorTest extends TestCase
         $this->assertFalse($schema->isValid(null));
         $this->assertFalse($schema->isValid(3));
         $this->assertTrue($schema->isValid(4));
-    } */
+    }
 }

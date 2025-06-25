@@ -2,19 +2,13 @@
 
 namespace Hexlet\Validator;
 
-class ArrayScheme
+class ArrayScheme extends CommonScheme
 {
     private $rules = [
         'required' => false,
         'sizeof' => false,
         'shape' => false
     ];
-
-    public function required(): static
-    {
-        $this->rules['required'] = true;
-        return $this;
-    }
 
     public function sizeof(int $size): static
     {
@@ -58,6 +52,6 @@ class ArrayScheme
             }
         }
 
-        return true;
+        return $this->checkCustomValidators($array);;
     }
 }
