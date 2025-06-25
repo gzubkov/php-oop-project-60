@@ -47,8 +47,8 @@ class ArrayScheme extends CommonScheme
                                 return false;
                             }
                             
-                            if ($innerRule->isValid($value[$key]) === false) {
-                                echo "!innerNotValid!({$key} => {$value[$key]})!!!\n";
+                            if ($innerRule->isValid($array[$key]) === false) {
+                                echo "!innerNotValid!({$key} => {$array[$key]})!!!\n";
                                 return false;
                             }
                         }
