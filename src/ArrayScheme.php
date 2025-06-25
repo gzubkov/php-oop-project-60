@@ -42,7 +42,7 @@ class ArrayScheme extends CommonScheme
                             if (array_key_exists($key, $array) === false) {
                                 return false;
                             }
-                            
+
                             if ($innerRule->isValid($array[$key]) === false) {
                                 return false;
                             }
