@@ -44,13 +44,13 @@ class NumberScheme extends CommonScheme
                             return false;
                         }
                         break;
-                    case 'range':
+                    /*case 'range':
                         if (
                             $integer < $value[0]
                             || $integer > $value[1]
                         ) {
                             return false;
-                        }
+                        } */
                 }
             }
         }
