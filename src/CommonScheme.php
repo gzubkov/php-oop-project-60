@@ -7,7 +7,7 @@ abstract class CommonScheme
     protected array $validators = [];
     protected array $customValidators = [];
 
-    public function __construct(array $customValidators)
+    public function __construct(array $customValidators = [])
     {
         $this->customValidators = $customValidators;
     }
@@ -36,6 +36,8 @@ abstract class CommonScheme
 
             return $validator($value, ...$args);
         };
+
+var_dump($this->validators);
 
         return $this;
     }
