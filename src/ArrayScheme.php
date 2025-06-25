@@ -24,6 +24,8 @@ class ArrayScheme extends CommonScheme
 
     public function isValid($array): bool
     {
+        var_dump($array);
+        
         foreach ($this->rules as $rule => $value) {
             if ($value !== false) {
                 switch ($rule) {
