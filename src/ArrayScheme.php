@@ -18,7 +18,7 @@ class ArrayScheme extends CommonScheme
 
     public function shape(array $shape): static
     {
-        $this->rules['shapes'] = $shapes;
+        $this->rules['shape'] = $shape;
         return $this;
     }
 
