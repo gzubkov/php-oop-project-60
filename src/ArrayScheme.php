@@ -43,10 +43,12 @@ class ArrayScheme extends CommonScheme
                     case 'shape':
                         foreach ($value as $key => $innerRule) {
                             if (array_key_exists($key, $array) === false) {
+                                echo "!!!!!\n";
                                 return false;
                             }
                             
                             if ($innerRule->isValid($value[$key]) === false) {
+                                echo "!innerNotValid!!!!\n";
                                 return false;
                             }
                         }

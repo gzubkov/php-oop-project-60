@@ -26,7 +26,8 @@ class NumberScheme extends CommonScheme
     {
         var_dump($integer);
         var_dump($rules);
-        
+        echo "----\n";
+
         if (!is_null($integer) && !is_numeric($integer)) {
             return false;
         }
