@@ -1,0 +1,45 @@
+{
+  "name": "hexlet/code",
+  "version": "0.0.1",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Georgy Zubkov",
+      "email": "gzubkov@gmail.com"
+    }
+  ],
+  "description": "hexlet php-package",
+  "license": "MIT",
+  "scripts": {
+    "test": "phpunit tests"
+  },
+  "autoload": {
+    "psr-4": {
+      "Php\\Package\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Php\\Package\\Tests\\": "tests"
+    }
+  },
+  "require": {
+    "illuminate/collections": "^12.0",
+    "nesbot/carbon": "^3.9",
+    "symfony/string": "^7.2"
+  },
+  "require-dev": {
+    "psy/psysh": "@stable",
+    "phpstan/phpstan-phpunit": "^2.0",
+    "phpstan/extension-installer": "^1.3",
+    "symfony/var-dumper": "^7.2",
+    "phpunit/phpunit": "^11.5",
+    "squizlabs/php_codesniffer": "*",
+    "phpstan/phpstan": "^2.1"
+  },
+  "config": {
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    }
+  }
+}
