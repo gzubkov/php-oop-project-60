@@ -3,6 +3,7 @@
 namespace Hexlet\Validator\Tests;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Assert;
 use Hexlet\Validator\Validator;
 
 class ArrayValidatorTest extends TestCase
@@ -18,27 +19,27 @@ class ArrayValidatorTest extends TestCase
     {
         $schema = $this->validator->array();
 
-        $this->assertTrue($schema->isValid(null));
-        $this->assertTrue($schema->isValid([]));
-        $this->assertTrue($schema->isValid(['hexlet']));
+        Assert::assertTrue($schema->isValid(null));
+        Assert::assertTrue($schema->isValid([]));
+        Assert::assertTrue($schema->isValid(['hexlet']));
     }
 
     public function testRequired(): void
     {
         $schema = $this->validator->array()->required();
 
-        $this->assertFalse($schema->isValid(null));
-        $this->assertTrue($schema->isValid([]));
-        $this->assertTrue($schema->isValid(['hexlet']));
+        Assert::assertFalse($schema->isValid(null));
+        Assert::assertTrue($schema->isValid([]));
+        Assert::assertTrue($schema->isValid(['hexlet']));
     }
 
     public function testSizeof(): void
     {
         $schema = $this->validator->array()->sizeof(2);
 
-        $this->assertTrue($schema->isValid(null)); // null allowed when not required
-        $this->assertFalse($schema->isValid(['hexlet']));
-        $this->assertTrue($schema->isValid(['hexlet', 'code-basics']));
+        Assert::assertTrue($schema->isValid(null)); // null allowed when not required
+        Assert::assertFalse($schema->isValid(['hexlet']));
+        Assert::assertTrue($schema->isValid(['hexlet', 'code-basics']));
     }
 
     public function testCombinedValidators(): void
@@ -47,9 +48,9 @@ class ArrayValidatorTest extends TestCase
             ->required()
             ->sizeof(2);
 
-        $this->assertFalse($schema->isValid(null));
-        $this->assertFalse($schema->isValid(['hexlet']));
-        $this->assertTrue($schema->isValid(['hexlet', 'code-basics']));
+        Assert::assertFalse($schema->isValid(null));
+        Assert::assertFalse($schema->isValid(['hexlet']));
+        Assert::assertTrue($schema->isValid(['hexlet', 'code-basics']));
     }
 
     public function testShapeValidation(): void
@@ -60,14 +61,14 @@ class ArrayValidatorTest extends TestCase
         ]);
 
         // Valid cases
-        $this->assertTrue($schema->isValid(['name' => 'kolya', 'age' => 100]));
-        $this->assertTrue($schema->isValid(['name' => 'maya', 'age' => null]));
-        $this->assertTrue($schema->isValid(['name' => 'bob']));
+        Assert::assertTrue($schema->isValid(['name' => 'kolya', 'age' => 100]));
+        Assert::assertTrue($schema->isValid(['name' => 'maya', 'age' => null]));
+        Assert::assertTrue($schema->isValid(['name' => 'bob']));
 
         // Invalid cases
-        $this->assertFalse($schema->isValid(['name' => '', 'age' => null]));
-        $this->assertFalse($schema->isValid(['name' => 'ada', 'age' => -5]));
-        $this->assertFalse($schema->isValid(['age' => 10]));
+        Assert::assertFalse($schema->isValid(['name' => '', 'age' => null]));
+        Assert::assertFalse($schema->isValid(['name' => 'ada', 'age' => -5]));
+        Assert::assertFalse($schema->isValid(['age' => 10]));
     }
 
     public function testShapeWithNullable(): void
@@ -78,8 +79,8 @@ class ArrayValidatorTest extends TestCase
                 ])
         ]);
 
-        $this->assertTrue($schema->isValid(['profile' => ['name' => 'alice']]));
-        $this->assertTrue($schema->isValid(['profile' => null]));
-        $this->assertFalse($schema->isValid(['profile' => ['name' => '']]));
+        Assert::assertTrue($schema->isValid(['profile' => ['name' => 'alice']]));
+        Assert::assertTrue($schema->isValid(['profile' => null]));
+        Assert::assertFalse($schema->isValid(['profile' => ['name' => '']]));
     }
 }
