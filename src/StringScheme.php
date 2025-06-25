@@ -30,13 +30,13 @@ class StringScheme extends CommonScheme
                     case 'required':
                         if (
                             is_string($string) === false
-                            || $str == ''
+                            || strlen($string) === 0
                         ) {
                             return false;
                         }
                         break;
                     case 'minlength':
-                        if (strlen($string) < $value) {
+                        if (mb_strlen($string) < $value) {
                             return false;
                         }
                         break;
