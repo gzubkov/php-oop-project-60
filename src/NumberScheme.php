@@ -37,7 +37,7 @@ class NumberScheme extends CommonScheme
                         }
                         break;
                     case 'positive':
-                        if ($integer < 0) {
+                        if ($integer <= 0) {
                             return false;
                         }
                         break;
