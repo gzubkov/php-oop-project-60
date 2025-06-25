@@ -37,7 +37,7 @@ abstract class CommonScheme
             return $validator($value, ...$args);
         };
 
-var_dump($this->validators);
+var_dump($this->validators[$name]);
 
         return $this;
     }

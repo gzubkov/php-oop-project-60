@@ -10,12 +10,6 @@ class Validator
         'array' => []
     ];
 
-    public function __construct()
-    {
-        var_dump(file_get_contents('/project/tests/ValidatorTest.php'));
-        exit(0);
-    }
-
     public function string(): StringScheme
     {
         return new StringScheme($this->getCustomValidators('string'));
@@ -34,12 +28,9 @@ class Validator
     public function addValidator(string $type, string $name, callable $fn): void
     {
         if (!array_key_exists($type, $this->customValidators)) {
-            var_dump($type);
-            echo "Unsupported!";
             throw new \InvalidArgumentException("Unsupported validator type: {$type}");
         }
         $this->customValidators[$type][$name] = $fn;
-        var_dump($name);
     }
 
     public function getCustomValidators(string $type): array
