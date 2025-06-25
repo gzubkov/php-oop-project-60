@@ -8,19 +8,19 @@
       "email": "gzubkov@gmail.com"
     }
   ],
-  "description": "hexlet php-package",
+  "description": "hexlet validator project",
   "license": "MIT",
   "scripts": {
     "test": "phpunit tests"
   },
   "autoload": {
     "psr-4": {
-      "Php\\Package\\": "src"
+      "Hexlet\\Validator\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Php\\Package\\Tests\\": "tests"
+      "Hexlet\\Validator\\Tests\\": "tests"
     }
   },
   "require": {
