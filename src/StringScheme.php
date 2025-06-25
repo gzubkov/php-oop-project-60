@@ -24,6 +24,8 @@ class StringScheme extends CommonScheme
 
     public function isValid($string): bool
     {
+        var_dump($string);
+        
         foreach ($this->rules as $rule => $value) {
             if ($value !== false) {
                 switch ($rule) {

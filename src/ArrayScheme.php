@@ -56,6 +56,6 @@ class ArrayScheme extends CommonScheme
             }
         }
 
-        return $this->checkCustomValidators($array);;
+        return $this->checkCustomValidators($array);
     }
 }

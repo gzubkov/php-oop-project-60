@@ -62,6 +62,6 @@ class NumberScheme extends CommonScheme
             }
         }
 
-        return true; // $this->checkCustomValidators($integer);
+        return $this->checkCustomValidators($integer);
     }
 }
