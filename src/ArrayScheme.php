@@ -35,7 +35,7 @@ class ArrayScheme extends CommonScheme
                             return false;
                         }
                         break;
-                    /*case 'sizeof':
+                    case 'sizeof':
                         if (sizeof($array) < $value) {
                             return false;
                         }
@@ -49,7 +49,7 @@ class ArrayScheme extends CommonScheme
                             if ($innerRule->isValid($value[$key]) === false) {
                                 return false;
                             }
-                        } */
+                        }
                 }
             }
         }
