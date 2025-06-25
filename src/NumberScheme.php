@@ -36,14 +36,14 @@ class NumberScheme extends CommonScheme
                             return false;
                         }
                         break;
-                    /*case 'positive':
+                    case 'positive':
                         if (
-                            $integer < 0
+                            $integer <= 0
                             && $integer !== null
                         ) {
                             return false;
                         }
-                        break; */
+                        break;
                     /*case 'range':
                         if (
                             $integer < $value[0]
