@@ -22,14 +22,14 @@ class StringScheme extends CommonScheme
         return $this;
     }
 
-    public function isValid(string $string): bool
+    public function isValid($string): bool
     {
         foreach ($this->rules as $rule => $value) {
             if ($value !== false) {
                 switch ($rule) {
                     case 'required':
                         if (
-                            $str === null
+                            is_string($string) === false
                             || $str == ''
                         ) {
                             return false;

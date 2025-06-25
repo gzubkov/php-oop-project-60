@@ -47,7 +47,6 @@ class ArrayScheme extends CommonScheme
                                 return false;
                             }
                         }
-                    }
                 }
             }
         }

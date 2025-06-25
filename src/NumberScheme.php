@@ -22,7 +22,7 @@ class NumberScheme extends CommonScheme
         return $this;
     }
 
-    public function isValid(i$integer): bool
+    public function isValid($integer): bool
     {
         foreach ($this->rules as $rule => $value) {
             if ($value !== false) {
