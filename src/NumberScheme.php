@@ -28,13 +28,13 @@ class NumberScheme
         return $this;
     }
 
-    public function isValid(int $integer): bool
+    public function isValid(i$integer): bool
     {
         foreach ($this->rules as $rule => $value) {
             if ($value !== false) {
                 switch ($rule) {
                     case 'required':
-                        if ($integer === null) {
+                        if (is_int($integer) === false) {
                             return false;
                         }
                         break;

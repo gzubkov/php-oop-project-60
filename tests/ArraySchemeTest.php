@@ -52,7 +52,7 @@ class ArrayValidatorTest extends TestCase
         $this->assertFalse($schema->isValid(['hexlet']));
         $this->assertTrue($schema->isValid(['hexlet', 'code-basics']));
     }
-/*
+
     public function testShapeValidation(): void
     {
         $schema = $this->validator->array()->shape([
@@ -71,6 +71,7 @@ class ArrayValidatorTest extends TestCase
         $this->assertFalse($schema->isValid(['age' => 10])); // missing required name
     }
 
+    /*
     public function testShapeWithNullable(): void
     {
         $schema = $this->validator->array()->shape([
@@ -82,5 +83,6 @@ class ArrayValidatorTest extends TestCase
         $this->assertTrue($schema->isValid(['profile' => ['name' => 'alice']]));
         $this->assertTrue($schema->isValid(['profile' => null]));
         $this->assertFalse($schema->isValid(['profile' => ['name' => '']]));
-    } */
+    }
+        */
 }
