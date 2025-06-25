@@ -4,7 +4,7 @@ namespace Hexlet\Validator;
 
 class ArrayScheme extends CommonScheme
 {
-    private $rules = [
+    protected $rules = [
         'required' => false,
         'sizeof' => false,
         'shape' => false

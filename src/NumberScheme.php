@@ -4,7 +4,7 @@ namespace Hexlet\Validator;
 
 class NumberScheme extends CommonScheme
 {
-    private $rules = [
+    protected $rules = [
         'required' => false,
         'positive' => false,
         'range' => false

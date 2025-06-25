@@ -4,7 +4,7 @@ namespace Hexlet\Validator;
 
 class StringScheme extends CommonScheme
 {
-    private $rules = [
+    protected $rules = [
         'required' => false,
         'contains' => false,
         'minlength' => false

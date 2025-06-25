@@ -14,7 +14,7 @@ abstract class CommonScheme
 
     public function required(): static
     {
-        static::rules['required'] = true;
+        $this->rules['required'] = true;
         return $this;
     }
 
