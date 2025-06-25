@@ -24,6 +24,9 @@ class NumberScheme extends CommonScheme
 
     public function isValid($integer): bool
     {
+        var_dump($integer);
+        var_dump($rules);
+        
         if (!is_null($integer) && !is_numeric($integer)) {
             return false;
         }
@@ -44,13 +47,16 @@ class NumberScheme extends CommonScheme
                             return false;
                         }
                         break;
-                    /*case 'range':
+                    case 'range':
+                        if ($integer === null) {
+                            return false;
+                        }
                         if (
                             $integer < $value[0]
                             || $integer > $value[1]
                         ) {
                             return false;
-                        } */
+                        }
                 }
             }
         }
