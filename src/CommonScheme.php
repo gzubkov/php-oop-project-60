@@ -42,5 +42,5 @@ abstract class CommonScheme
         return $this;
     }
 
-    public function isValid(mixed $value): bool;
+    abstract public function isValid(mixed $value): bool;
 }
