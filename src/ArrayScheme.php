@@ -24,9 +24,6 @@ class ArrayScheme extends CommonScheme
 
     public function isValid($array): bool
     {
-        var_dump($array);
-        var_dump($this->rules);
-        
         foreach ($this->rules as $rule => $value) {
             if ($value !== false) {
                 switch ($rule) {
@@ -43,12 +40,10 @@ class ArrayScheme extends CommonScheme
                     case 'shape':
                         foreach ($value as $key => $innerRule) {
                             if (array_key_exists($key, $array) === false) {
-                                echo "!array_key_not_exists in array!!!!\n";
                                 return false;
                             }
                             
                             if ($innerRule->isValid($array[$key]) === false) {
-                                echo "!innerNotValid!({$key} => {$array[$key]})!!!\n";
                                 return false;
                             }
                         }

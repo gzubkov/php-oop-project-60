@@ -21,15 +21,7 @@ abstract class CommonScheme
     public function checkCustomValidators(mixed $value): bool
     {
         foreach ($this->validators as $validator) {
-            $c = $validator($value);
-
-            var_dump($value);
-            var_dump($c);
-
-            echo "------\n\n";
-
-            if (!c) {
-            //if (!$validator($value)) {
+            if (!$validator($value)) {
                 return false;
             }
         }
@@ -44,8 +36,6 @@ abstract class CommonScheme
 
             return $validator($value, ...$args);
         };
-
-var_dump($this->validators[$name]);
 
         return $this;
     }
