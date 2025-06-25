@@ -4,7 +4,7 @@ namespace Hexlet\Validator;
 
 class StringScheme extends CommonScheme
 {
-    protected $rules = [
+    protected array $rules = [
         'required' => false,
         'contains' => false,
         'minlength' => false
@@ -22,7 +22,7 @@ class StringScheme extends CommonScheme
         return $this;
     }
 
-    public function isValid($string): bool
+    public function isValid(mixed $string): bool
     {
         foreach ($this->rules as $rule => $value) {
             if ($value !== false) {

@@ -4,7 +4,7 @@ namespace Hexlet\Validator;
 
 class NumberScheme extends CommonScheme
 {
-    protected $rules = [
+    protected array $rules = [
         'required' => false,
         'positive' => false,
         'range' => false
@@ -22,7 +22,7 @@ class NumberScheme extends CommonScheme
         return $this;
     }
 
-    public function isValid($integer): bool
+    public function isValid(mixed $integer): bool
     {
         foreach ($this->rules as $rule => $value) {
             if ($value !== false) {

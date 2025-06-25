@@ -7,6 +7,8 @@ abstract class CommonScheme
     protected array $validators = [];
     protected array $customValidators = [];
 
+    protected array $rules;
+
     public function __construct(array $customValidators = [])
     {
         $this->customValidators = $customValidators;

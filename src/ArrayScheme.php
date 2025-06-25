@@ -4,7 +4,7 @@ namespace Hexlet\Validator;
 
 class ArrayScheme extends CommonScheme
 {
-    protected $rules = [
+    protected array $rules = [
         'required' => false,
         'sizeof' => false,
         'shape' => false
@@ -22,7 +22,7 @@ class ArrayScheme extends CommonScheme
         return $this;
     }
 
-    public function isValid($array): bool
+    public function isValid(mixed $array): bool
     {
         foreach ($this->rules as $rule => $value) {
             if ($value !== false) {

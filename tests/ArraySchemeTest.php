@@ -3,7 +3,6 @@
 namespace Hexlet\Validator\Tests;
 
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Framework\Assert;
 use Hexlet\Validator\Validator;
 
 class ArrayValidatorTest extends TestCase
@@ -63,12 +62,12 @@ class ArrayValidatorTest extends TestCase
         // Valid cases
         $this->assertTrue($schema->isValid(['name' => 'kolya', 'age' => 100]));
         $this->assertTrue($schema->isValid(['name' => 'maya', 'age' => null]));
-        $this->assertTrue($schema->isValid(['name' => 'bob'])); // Исправлено: age необязателен
+        $this->assertTrue($schema->isValid(['name' => 'bob']));
 
         // Invalid cases
         $this->assertFalse($schema->isValid(['name' => '', 'age' => null]));
         $this->assertFalse($schema->isValid(['name' => 'ada', 'age' => -5]));
-        $this->assertFalse($schema->isValid(['age' => 10])); // missing required name
+        $this->assertFalse($schema->isValid(['age' => 10]));
     }
 
     public function testShapeWithNullable(): void
