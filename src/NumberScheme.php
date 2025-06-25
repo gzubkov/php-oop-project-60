@@ -24,11 +24,15 @@ class NumberScheme extends CommonScheme
 
     public function isValid($integer): bool
     {
+        if (!is_null($integer) && !is_numeric($integer)) {
+            return false;
+        }
+        
         foreach ($this->rules as $rule => $value) {
             if ($value !== false) {
                 switch ($rule) {
                     case 'required':
-                        if (is_int($integer) === false) {
+                        if (is_numeric($integer) === false) {
                             return false;
                         }
                         break;
